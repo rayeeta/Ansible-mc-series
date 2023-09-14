@@ -17,7 +17,7 @@ resource "aws_instance" "ubuntu-hosts" {
   ami           = data.aws_ami.ubuntu.id
   instance_type = var.my_instance_type
   user_data     = file("${path.module}/create_ansible_user.sh")
-  key_name      = var.my_key
+  key_name      = var.ansible
   count         = 2
   tags = {
     "Name" = "My-Ubuntu-${count.index}"
@@ -29,7 +29,7 @@ resource "aws_instance" "rhel-hosts" {
   ami           = data.aws_ami.rhel.id
   instance_type = var.my_instance_type
   user_data     = file("${path.module}/create_ansible_user.sh")
-  key_name      = var.my_key
+  key_name      = var.ansible
   count         = 1
   tags = {
     "Name" = "My-rhel-${count.index}"
