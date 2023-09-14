@@ -8,7 +8,7 @@ variable "my_instance_type" {
   default = "t2.micro"
 }
 
-variable "my_key" {
+variable "ansible" {
   type    = string
   default = "ansible"
 }
