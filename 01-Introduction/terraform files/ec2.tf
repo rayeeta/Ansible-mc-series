@@ -5,7 +5,7 @@ resource "aws_instance" "ubuntu" {
   #user_data     = file("${path.module}/ansible-install-ubuntu.sh")
   user_data = data.template_cloudinit_config.user-data.rendered
 
-  key_name      = var.my_key
+  key_name      = var.ansible.key
 
   tags = {
     "Name" = "Ansible-Ubuntu"
